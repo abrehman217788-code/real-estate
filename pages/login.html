@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — Elite Estates</title>
+  <meta name="description" content="Sign in to your Elite Estates account. Access your dashboard, manage properties, and connect with buyers and agents.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Elite Estates",
+  "url": "https://eliteestates.pk",
+  "address": { "@type": "PostalAddress", "addressLocality": "Islamabad", "addressCountry": "PK" },
+  "contactPoint": { "@type": "ContactPoint", "telephone": "+92-333-1940971", "contactType": "customer service" }
+}
+</script>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo"><span class="logo-icon"><i class="fas fa-building"></i></span> Elite<span class="accent">Estates</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="listings.html">Properties</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="nav-cta"><i class="fas fa-user"></i> Sign In</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="auth-section">
+    <div class="auth-card reveal">
+      <h2>Welcome Back</h2>
+      <p class="auth-subtitle">Sign in to your Elite Estates account</p>
+      <form id="loginForm">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;font-size:0.82rem;">
+          <label style="display:flex;align-items:center;gap:6px;color:var(--text-muted);cursor:pointer;">
+            <input type="checkbox" style="width:auto;"> Remember me
+          </label>
+          <a href="#" style="color:var(--accent);font-weight:500;">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Sign In</button>
+      </form>
+      <div class="auth-divider">or continue with</div>
+      <div class="social-auth">
+        <button class="btn"><i class="fab fa-google"></i> Google</button>
+        <button class="btn"><i class="fab fa-facebook-f"></i> Facebook</button>
+      </div>
+      <p class="auth-footer">Don't have an account? <a href="register.html">Create one</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo"><span class="logo-icon"><i class="fas fa-building"></i></span> Elite<span class="accent">Estates</span></a>
+          <p>Premium real estate platform helping agents, agencies, and property seekers connect, discover, and transact with confidence.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="listings.html">Properties</a></li>
+            <li><a href="agents.html">Agents</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Property Types</h4>
+          <ul>
+            <li><a href="listings.html?type=house">Houses</a></li>
+            <li><a href="listings.html?type=apartment">Apartments</a></li>
+            <li><a href="listings.html?type=plot">Plots</a></li>
+            <li><a href="listings.html?type=commercial">Commercial</a></li>
+            <li><a href="listings.html?type=villa">Villas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</a></li>
+            <li><a href="tel:+923331940971"><i class="fas fa-phone"></i> +92 333 1940971</a></li>
+            <li><a href="mailto:info@eliteestates.pk"><i class="fas fa-envelope"></i> info@eliteestates.pk</a></li>
+            <li><a href="#"><i class="far fa-clock"></i> Mon-Sat 9AM - 7PM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Estates. All rights reserved.</p>
+        <p>Powered by <strong style="color:var(--accent);">EliteEstates</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/923331940971" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script src="../js/main.js"></script>
+</body>
+</html>

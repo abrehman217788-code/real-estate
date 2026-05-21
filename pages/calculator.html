@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage & Rent Calculator — Elite Estates</title>
+  <meta name="description" content="Plan your property finances with Elite Estates' mortgage and rent calculator. Calculate monthly payments, total interest, and loan breakdown.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Elite Estates",
+    "url": "https://eliteestates.pk",
+    "logo": "https://eliteestates.pk/assets/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+92-333-1940971",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Urdu"]
+    },
+    "sameAs": [
+      "https://facebook.com/eliteestates",
+      "https://instagram.com/eliteestates",
+      "https://wa.me/923331940971"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo"><span class="logo-icon"><i class="fas fa-building"></i></span> Elite<span class="accent">Estates</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="listings.html">Properties</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="nav-cta"><i class="fas fa-user"></i> Sign In</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Mortgage Calculator</span></div>
+      <h1>Mortgage Calculator</h1>
+      <p>Plan your property finances with our easy-to-use calculator</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="calc-grid">
+        <div class="calc-form reveal">
+          <h2>Enter Property Details</h2>
+          <form id="calcForm">
+            <div class="form-group">
+              <label for="price">Property Price (PKR)</label>
+              <input type="number" id="price" name="price" value="5000000" min="1" step="100000" required>
+            </div>
+            <div class="form-group">
+              <label for="downPayment">Down Payment (PKR)</label>
+              <input type="number" id="downPayment" name="downPayment" value="1000000" min="0" step="100000" required>
+            </div>
+            <div class="form-group">
+              <label for="rate">Interest Rate (%)</label>
+              <input type="number" id="rate" name="rate" value="8" min="0.1" step="0.1" required>
+            </div>
+            <div class="form-group">
+              <label for="years">Loan Term (years)</label>
+              <input type="number" id="years" name="years" value="20" min="1" max="40" step="1" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;"><i class="fas fa-calculator"></i> Calculate</button>
+          </form>
+        </div>
+        <div class="calc-results reveal reveal-d1">
+          <h2>Payment Breakdown</h2>
+          <div class="calc-result-card result-primary">
+            <span class="result-label">Monthly Payment</span>
+            <span class="result-value" id="calcMonthly">PKR 0</span>
+          </div>
+          <div class="calc-result-row">
+            <div class="calc-result-card">
+              <span class="result-label">Total Payment</span>
+              <span class="result-value" id="calcTotal">PKR 0</span>
+            </div>
+            <div class="calc-result-card">
+              <span class="result-label">Total Interest</span>
+              <span class="result-value" id="calcInterest">PKR 0</span>
+            </div>
+          </div>
+          <div class="calc-result-row">
+            <div class="calc-result-card">
+              <span class="result-label">Loan Amount</span>
+              <span class="result-value" id="calcLoan">PKR 0</span>
+            </div>
+            <div class="calc-result-card">
+              <span class="result-label">Principal</span>
+              <span class="result-value" id="calcPrincipal">PKR 0</span>
+            </div>
+          </div>
+          <div class="calc-result-card">
+            <span class="result-label">Down Payment</span>
+            <span class="result-value" id="calcDown">PKR 0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">Understanding Your Mortgage</h2>
+        <p class="section-subtitle">A simple breakdown of how your monthly payment is calculated.</p>
+      </div>
+      <div class="how-grid">
+        <div class="how-card reveal">
+          <div class="how-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3>Loan Principal</h3>
+          <p>This is the amount you borrow after making your down payment. It's calculated as Property Price minus Down Payment. Your monthly payments go toward repaying this principal plus interest.</p>
+        </div>
+        <div class="how-card reveal reveal-d1">
+          <div class="how-icon"><i class="fas fa-percent"></i></div>
+          <h3>Interest Rate</h3>
+          <p>The annual interest rate charged by the lender. A lower rate means lower monthly payments. We use the standard monthly compounding formula to compute your amortized payments.</p>
+        </div>
+        <div class="how-card reveal reveal-d2">
+          <div class="how-icon"><i class="fas fa-calendar-alt"></i></div>
+          <h3>Loan Term</h3>
+          <p>The duration over which you repay the loan, typically 10–30 years. Longer terms reduce monthly payments but increase total interest paid over the life of the loan.</p>
+        </div>
+        <div class="how-card reveal">
+          <div class="how-icon"><i class="fas fa-piggy-bank"></i></div>
+          <h3>Down Payment</h3>
+          <p>A larger down payment reduces your loan amount and may qualify you for better interest rates. We recommend at least 20% of the property price for optimal loan terms.</p>
+        </div>
+        <div class="how-card reveal reveal-d1">
+          <div class="how-icon"><i class="fas fa-chart-pie"></i></div>
+          <h3>Monthly Breakdown</h3>
+          <p>Each monthly payment consists of principal and interest portions. Early payments are interest-heavy; over time, more of your payment goes toward reducing the principal balance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo"><span class="logo-icon"><i class="fas fa-building"></i></span> Elite<span class="accent">Estates</span></a>
+          <p>Premium real estate platform helping agents, agencies, and property seekers connect, discover, and transact with confidence.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="listings.html">Properties</a></li>
+            <li><a href="agents.html">Agents</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Property Types</h4>
+          <ul>
+            <li><a href="listings.html?type=house">Houses</a></li>
+            <li><a href="listings.html?type=apartment">Apartments</a></li>
+            <li><a href="listings.html?type=plot">Plots</a></li>
+            <li><a href="listings.html?type=commercial">Commercial</a></li>
+            <li><a href="listings.html?type=villa">Villas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</a></li>
+            <li><a href="tel:+923331940971"><i class="fas fa-phone"></i> +92 333 1940971</a></li>
+            <li><a href="mailto:info@eliteestates.pk"><i class="fas fa-envelope"></i> info@eliteestates.pk</a></li>
+            <li><a href="#"><i class="far fa-clock"></i> Mon-Sat 9AM - 7PM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Estates. All rights reserved.</p>
+        <p>Powered by <strong style="color:var(--accent);">EliteEstates</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/923331940971" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="../js/main.js"></script>
+  <script>
+  (function() {
+    function calculateMortgage() {
+      var price = parseFloat(document.getElementById('price').value) || 0;
+      var down = parseFloat(document.getElementById('downPayment').value) || 0;
+      var rate = parseFloat(document.getElementById('rate').value) || 0;
+      var years = parseFloat(document.getElementById('years').value) || 1;
+
+      var loan = price - down;
+      if (loan < 0) loan = 0;
+
+      var monthlyRate = rate / 100 / 12;
+      var numPayments = years * 12;
+
+      var monthly;
+      if (monthlyRate === 0) {
+        monthly = loan / numPayments;
+      } else {
+        monthly = loan * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+      }
+
+      var total = monthly * numPayments;
+      var interest = total - loan;
+
+      function fmt(val) {
+        return 'PKR ' + Math.round(val).toLocaleString('en-PK');
+      }
+
+      document.getElementById('calcMonthly').textContent = fmt(monthly);
+      document.getElementById('calcTotal').textContent = fmt(total);
+      document.getElementById('calcInterest').textContent = fmt(interest);
+      document.getElementById('calcLoan').textContent = fmt(loan);
+      document.getElementById('calcPrincipal').textContent = fmt(loan);
+      document.getElementById('calcDown').textContent = fmt(down);
+    }
+
+    document.getElementById('calcForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      calculateMortgage();
+    });
+
+    calculateMortgage();
+  })();
+  </script>
+</body>
+</html>

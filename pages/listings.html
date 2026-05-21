@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Listings — Elite Estates</title>
+  <meta name="description" content="Browse premium properties for sale and rent across Pakistan. Filter by location, type, price, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Elite Estates",
+  "url": "https://eliteestates.pk",
+  "address": { "@type": "PostalAddress", "addressLocality": "Islamabad", "addressCountry": "PK" },
+  "contactPoint": { "@type": "ContactPoint", "telephone": "+92-333-1940971", "contactType": "customer service" }
+}
+</script>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo"><span class="logo-icon"><i class="fas fa-building"></i></span> Elite<span class="accent">Estates</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="listings.html">Properties</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="nav-cta"><i class="fas fa-user"></i> Sign In</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Properties</span></div>
+      <h1>Property Listings</h1>
+      <p>Discover premium residential and commercial properties across Pakistan.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="listings-layout">
+      <aside class="filter-sidebar reveal">
+        <h3>Filters <i class="fas fa-sliders-h" style="color:var(--accent);font-size:0.85rem;"></i></h3>
+        <form id="filterForm">
+          <div class="filter-group">
+            <label>Property Type</label>
+            <select name="type">
+              <option value="">All Types</option>
+              <option value="house">House</option>
+              <option value="apartment">Apartment</option>
+              <option value="villa">Villa</option>
+              <option value="plot">Plot</option>
+              <option value="commercial">Commercial</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Status</label>
+            <select name="status">
+              <option value="">All Status</option>
+              <option value="sale">For Sale</option>
+              <option value="rent">For Rent</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Bedrooms</label>
+            <select name="bedrooms">
+              <option value="">Any</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Price Range</label>
+            <div class="filter-range">
+              <input type="number" name="minPrice" placeholder="Min" step="100000">
+              <span>—</span>
+              <input type="number" name="maxPrice" placeholder="Max" step="100000">
+            </div>
+          </div>
+          <div class="filter-actions">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-filter"></i> Apply</button>
+            <button type="reset" class="btn btn-outline btn-sm"><i class="fas fa-undo"></i> Reset</button>
+          </div>
+        </form>
+      </aside>
+
+      <div>
+        <div class="listings-header reveal">
+          <span class="result-count">Showing <strong>6 properties</strong></span>
+          <div class="listings-sort">
+            <select>
+              <option>Newest First</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+        <div class="property-grid">
+          <div class="property-card reveal" data-type="villa" data-status="sale" data-price="25000000" data-bedrooms="5">
+            <a href="property-detail.html" class="property-card-image">
+              <img src="https://picsum.photos/seed/property1/800/600" alt="Property" style="width:100%;height:100%;object-fit:cover;">
+              <span class="property-card-badge badge-for-sale">For Sale</span>
+              <button class="property-card-fav" aria-label="Favorite"><i class="far fa-heart"></i></button>
+            </a>
+            <a href="property-detail.html" class="property-card-body">
+              <div class="property-card-price">PKR 2.5 Crore <span>negotiable</span></div>
+              <h3 class="property-card-title">Luxury 5-Bed Villa with Pool</h3>
+              <p class="property-card-address"><i class="fas fa-map-marker-alt"></i> F-6/3, Islamabad</p>
+              <div class="property-card-specs">
+                <span><i class="fas fa-bed"></i> 5 Beds</span>
+                <span><i class="fas fa-bath"></i> 6 Baths</span>
+                <span><i class="fas fa-vector-square"></i> 600 sq.yd.</span>
+              </div>
+            </a>
+          </div>
+          <div class="property-card reveal reveal-d1" data-type="apartment" data-status="rent" data-price="85000" data-bedrooms="2">
+            <a href="property-detail.html" class="property-card-image">
+              <img src="https://picsum.photos/seed/property2/800/600" alt="Property" style="width:100%;height:100%;object-fit:cover;">
+              <span class="property-card-badge badge-for-rent">For Rent</span>
+              <button class="property-card-fav" aria-label="Favorite"><i class="far fa-heart"></i></button>
+            </a>
+            <a href="property-detail.html" class="property-card-body">
+              <div class="property-card-price">PKR 85,000 <span>/month</span></div>
+              <h3 class="property-card-title">Modern 2-Bed Apartment</h3>
+              <p class="property-card-address"><i class="fas fa-map-marker-alt"></i> Gulberg Green, Islamabad</p>
+              <div class="property-card-specs">
+                <span><i class="fas fa-bed"></i> 2 Beds</span>
+                <span><i class="fas fa-bath"></i> 2 Baths</span>
+                <span><i class="fas fa-vector-square"></i> 1200 sq.ft.</span>
+              </div>
+            </a>
+          </div>
+          <div class="property-card reveal reveal-d2" data-type="plot" data-status="sale" data-price="4500000" data-bedrooms="0">
+            <a href="property-detail.html" class="property-card-image">
+              <img src="https://picsum.photos/seed/property3/800/600" alt="Property" style="width:100%;height:100%;object-fit:cover;">
+              <span class="property-card-badge badge-for-sale">For Sale</span>
+              <span class="property-card-badge badge-featured">Featured</span>
+              <button class="property-card-fav" aria-label="Favorite"><i class="far fa-heart"></i></button>
+            </a>
+            <a href="property-detail.html" class="property-card-body">
+              <div class="property-card-price">PKR 45 Lakh <span>negotiable</span></div>
+              <h3 class="property-card-title">Prime Residential Plot</h3>
+              <p class="property-card-address"><i class="fas fa-map-marker-alt"></i> Bahria Town, Rawalpindi</p>
+              <div class="property-card-specs">
+                <span><i class="fas fa-vector-square"></i> 10 Marla</span>
+                <span><i class="fas fa-road"></i> Corner Plot</span>
+                <span><i class="fas fa-file-contract"></i> Clear Title</span>
+              </div>
+            </a>
+          </div>
+          <div class="property-card reveal" data-type="house" data-status="sale" data-price="18000000" data-bedrooms="4">
+            <a href="property-detail.html" class="property-card-image">
+              <img src="https://picsum.photos/seed/property4/800/600" alt="Property" style="width:100%;height:100%;object-fit:cover;">
+              <span class="property-card-badge badge-for-sale">For Sale</span>
+              <button class="property-card-fav" aria-label="Favorite"><i class="far fa-heart"></i></button>
+            </a>
+            <a href="property-detail.html" class="property-card-body">
+              <div class="property-card-price">PKR 1.8 Crore <span>negotiable</span></div>
+              <h3 class="property-card-title">4-Bed Family Home</h3>
+              <p class="property-card-address"><i class="fas fa-map-marker-alt"></i> University Road, Peshawar</p>
+              <div class="property-card-specs">
+                <span><i class="fas fa-bed"></i> 4 Beds</span>
+                <span><i class="fas fa-bath"></i> 4 Baths</span>
+                <span><i class="fas fa-vector-square"></i> 5 Marla</span>
+              </div>
+            </a>
+          </div>
+          <div class="property-card reveal reveal-d1" data-type="apartment" data-status="sale" data-price="12000000" data-bedrooms="3">
+            <a href="property-detail.html" class="property-card-image">
+              <img src="https://picsum.photos/seed/property5/800/600" alt="Property" style="width:100%;height:100%;object-fit:cover;">
+              <span class="property-card-badge badge-for-sale">For Sale</span>
+              <button class="property-card-fav" aria-label="Favorite"><i class="far fa-heart"></i></button>
+            </a>
+            <a href="property-detail.html" class="property-card-body">
+              <div class="property-card-price">PKR 1.2 Crore <span>negotiable</span></div>
+              <h3 class="property-card-title">3-Bed Luxury Apartment</h3>
+              <p class="property-card-address"><i class="fas fa-map-marker-alt"></i> DHA Phase 2, Islamabad</p>
+              <div class="property-card-specs">
+                <span><i class="fas fa-bed"></i> 3 Beds</span>
+                <span><i class="fas fa-bath"></i> 3 Baths</span>
+                <span><i class="fas fa-vector-square"></i> 1500 sq.ft.</span>
+              </div>
+            </a>
+          </div>
+          <div class="property-card reveal reveal-d2" data-type="commercial" data-status="rent" data-price="200000" data-bedrooms="0">
+            <a href="property-detail.html" class="property-card-image">
+              <img src="https://picsum.photos/seed/property6/800/600" alt="Property" style="width:100%;height:100%;object-fit:cover;">
+              <span class="property-card-badge badge-for-rent">For Rent</span>
+              <button class="property-card-fav" aria-label="Favorite"><i class="far fa-heart"></i></button>
+            </a>
+            <a href="property-detail.html" class="property-card-body">
+              <div class="property-card-price">PKR 2,00,000 <span>/month</span></div>
+              <h3 class="property-card-title">Commercial Office Space</h3>
+              <p class="property-card-address"><i class="fas fa-map-marker-alt"></i> Blue Area, Islamabad</p>
+              <div class="property-card-specs">
+                <span><i class="fas fa-vector-square"></i> 800 sq.ft.</span>
+                <span><i class="fas fa-wifi"></i> Fully Furnished</span>
+                <span><i class="fas fa-car"></i> Parking</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo"><span class="logo-icon"><i class="fas fa-building"></i></span> Elite<span class="accent">Estates</span></a>
+          <p>Premium real estate platform helping agents, agencies, and property seekers connect, discover, and transact with confidence.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="listings.html">Properties</a></li>
+            <li><a href="agents.html">Agents</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Property Types</h4>
+          <ul>
+            <li><a href="listings.html?type=house">Houses</a></li>
+            <li><a href="listings.html?type=apartment">Apartments</a></li>
+            <li><a href="listings.html?type=plot">Plots</a></li>
+            <li><a href="listings.html?type=commercial">Commercial</a></li>
+            <li><a href="listings.html?type=villa">Villas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</a></li>
+            <li><a href="tel:+923331940971"><i class="fas fa-phone"></i> +92 333 1940971</a></li>
+            <li><a href="mailto:info@eliteestates.pk"><i class="fas fa-envelope"></i> info@eliteestates.pk</a></li>
+            <li><a href="#"><i class="far fa-clock"></i> Mon-Sat 9AM - 7PM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Estates. All rights reserved.</p>
+        <p>Powered by <strong style="color:var(--accent);">EliteEstates</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/923331940971" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script src="../js/main.js"></script>
+</body>
+</html>
