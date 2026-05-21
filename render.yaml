@@ -4,8 +4,7 @@ services:
     runtime: node
     repo: https://github.com/abrehman217788-code/real-estate
     branch: master
-    rootDir: backend
-    buildCommand: npm install
+    buildCommand: npm run build
     startCommand: node server.js
     healthCheckPath: /api/health
     envVars:
